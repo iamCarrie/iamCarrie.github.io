@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+
+/***
+-- $ scss --
+-- ALL USE -- 
+****/
+
+
+/* -------------
+    $ scss
+------------- */
+
+/* font */
+$font-stack: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"微軟正黑體","新細明體","蘋果儷黑體",Verdana,sans-serif;
+
+/* img */
+$media-w1:1024px;
+$media-w2:768px;
+$media-w3:560px;
+$media-w4:1280px;
+
+
+
+/* mixin ani */
+@mixin mouseover($sec,$d) {
+     -webkit-transition: all $sec ease-Out;
+    -moz-transition: all $sec ease-Out;
+    -o-transition: all $sec ease-Out;
+    transition: all $sec ease-Out;
+    -webkit-transition-delay: $d;
+    transition-delay: $d;
+}
+
+
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};      
+}
+
+@include keyframes(go) {
+    0% { transform: scale(0); opacity: 0;}
+    50% { transform: scale(1); opacity: 1;}
+}
+@include keyframes(line) {
+    20% { width: 0; opacity: 0;}
+    50% { width: 35%; opacity: 1;}
+}
+@include keyframes(fadeOut) {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* -------------
+    ALL USE
+------------- */
+
+
+._c:after {content: '';display: block;clear: both;}
+.c {clear: both;}
+.hide {display: none;}
+a {display: block;text-decoration: none;}
+//img {display: block;width: 100%;}
+//img[src$=".gif"],
+//img[src$=".jpg"],
+//img[src$=".png"] {
+//    image-rendering: -moz-crisp-edges;
+//    /* Firefox */
+//    image-rendering: -o-crisp-edges;
+//    /* Opera */
+//    image-rendering: -webkit-optimize-contrast;
+//    /* Webkit (non-standard naming) */
+//    image-rendering: crisp-edges;
+//    -ms-interpolation-mode: nearest-neighbor;
+//    /* IE (non-standard property) */
+//}
