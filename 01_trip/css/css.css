@@ -442,7 +442,7 @@ html {
 @media screen and (max-width: 560px) {
   body,
   html {
-    font-size: 50%;
+    font-size: 40%;
   }
 }
 
